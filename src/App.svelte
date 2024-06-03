@@ -15,6 +15,8 @@
   const xKey = "myX"
   const yKey = "myY"
 
+  
+
   // data.forEach(d => {
   //   d[yKey] = +d[yKey]
   // })
@@ -60,6 +62,10 @@
 
       deportistas = data
     })
+
+    
+
+
   })
 </script>
 
@@ -69,10 +75,11 @@
     x={xKey}
     y={yKey}
     yDomain={[0, null]}
-    {data}
+    data={data}
   >
     <Svg>
-      <AxisX/>
+      <AxisX
+      />
       <AxisY
         ticks={4}
       />
