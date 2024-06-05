@@ -9,14 +9,16 @@
   import AxisX from "./_components/AxisX.svelte"
   import AxisY from "./_components/AxisY.svelte"
 
-  // This example loads csv data as json using @rollup/plugin-dsv
+  // Usamos un csv de ejemplo de LayerCake
   import data from "./_data/points.csv"
 
   const xKey = "myX"
   const yKey = "myY"
 
+  // Definimos el año como una variable reactiva
   let year = writable(2015);
 
+  // Hacemos un filtro de los datos para que solo muestre hasta el año seleccionado
   const filteredData = derived(year, $year => {
     return data.filter(d => d[xKey] <= $year);
   });
@@ -29,6 +31,8 @@
       <b>Gráfico interactivo</b>
     </h3>
     <p class="bajada">Líneas y áreas con slider de selección</p>
+
+    <!-- Slider para seleccionar el año -->
     <div class="input-container">
       <input
         type="range"
@@ -41,6 +45,7 @@
     </div>
   </div>
 
+  <!-- Gráfico principal -->
   <div class="chart-container">
     <LayerCake
       padding={{ top: 8, right: 10, bottom: 20, left: 25 }}
