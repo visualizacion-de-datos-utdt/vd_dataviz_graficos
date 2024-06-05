@@ -16,6 +16,7 @@
 	/** @type {Boolean} [snapBaselineLabel=false] - When labelPosition='even', adjust the lowest label so that it sits above the tick mark. */
 	export let snapBaselineLabel = false;
 
+
 	/** @type {Boolean} [gridlines=true] - Show gridlines extending into the chart area. */
 	export let gridlines = true;
 
